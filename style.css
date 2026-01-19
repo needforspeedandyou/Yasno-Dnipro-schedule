@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-image: url('assets/bg.png');
+    background-attachment: fixed;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.queue-cards {
+    width: 1200px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.queue-card {
+    min-height: 100px;
+    padding: 10px 15px;
+    border: 1px solid rgba(0, 0, 0, 0.158);
+    border-radius: 10px;
+    color: white;
+    background: #00000070;
+    backdrop-filter: blur(2px);
+    box-shadow: -1px 1px 5px 1px #00000010;
+}
+
+.card-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: black;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.title button {
+    font-size: 20px;
+    padding: 10px 50px;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.158);
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.411);
+    transition: 100ms;
+    cursor: pointer;
+}
+
+.title button:hover {
+    background: rgba(0, 0, 0, 0.158);
+    border: 1px solid rgba(0, 0, 0, 0.116);
+    transition: 100ms;
+}
+.notice-block {
+    margin-top: 20px;
+}
+
+@media (max-width: 1300px) {
+    .queue-cards {
+        width: 800px;
+    }
+}
+
+@media (max-width: 900px) {
+    .queue-cards {
+        width: 500px;
+    }
+}
+
+@media (max-width: 600px) {
+    .queue-cards {
+        width: 300px;
+        grid-template-columns: repeat(2, 150px);
+    }
+}
