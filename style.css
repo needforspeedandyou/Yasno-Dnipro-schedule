@@ -36,6 +36,7 @@ body {
 .card-title {
     display: flex;
     justify-content: space-between;
+    color: #ffb223;
 }
 
 h1 {
@@ -89,4 +90,5 @@ h1 {
         width: 300px;
         grid-template-columns: repeat(2, 150px);
     }
+
 }
