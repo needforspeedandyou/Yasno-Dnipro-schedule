@@ -3,7 +3,6 @@ let activeTab = 'today'
 async function run() {
     const res = await fetch("https://corsproxy.io/?https://app.yasno.ua/api/blackout-service/public/shutdowns/regions/3/dsos/301/planned-outages")
     const data = await res.json()
-    console.log(data)
 
     const createQueue = (data) => {
         const noticeBlock = document.querySelector(".notice-block")
@@ -16,7 +15,7 @@ async function run() {
             if (data[key][activeTab].status === "WaitingForSchedule") {
                 const notice = document.createElement("h2")
 
-                notice.textContent = 'No shedule for tommorow!'
+                notice.textContent = 'There is no schedule for tomorrow!'
                 notice.style.textAlign = 'center'
 
                 noticeBlock.appendChild(notice)
@@ -24,7 +23,6 @@ async function run() {
                 break
             } else {
                 let filteredData = data[key][activeTab].slots.filter(slot => slot.type !== "NotPlanned")
-                console.log(filteredData)
 
                 queueCard.classList.add("queue-card")
                 queueCard.innerHTML =
@@ -74,4 +72,5 @@ setInterval(() => {
     console.log("started")
     run()
 }, 60000)
+
 
